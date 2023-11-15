@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function show(string $id)
+    public function show()
     {
         try {
 
-            $user = User::with('personal_data', 'interest', 'social_network', 'technology')->findOrFail($id);
+            $user = User::with('personal_data', 'interest', 'social_network', 'technology')->findOrFail(1);
             $user->social_network->each(function ($socialNetwork) {
                 $socialNetwork->path_img = url($socialNetwork->path_img);
             });

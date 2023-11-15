@@ -1,13 +1,81 @@
-<ng-container *ngIf="profile">
 
-    <h1> {{ profile.user.name }}</h1>
-    <h2> {{ profile.user.personal_data.email }}</h2>
-    <h1> {{ profile.user.social_network[0].name }}</h1>
-    <h1> {{ profile.user.description }}</h1>
-    <h1> {{ profile.user.technology[0].name }}</h1>
-    <img [src]="profile.user.social_network[0].path_img" alt="si" width="70" height="70">
-
-</ng-container>
+<div *ngIf="profile" class="body-page p-4">
+    <header class="text-center rounded-top bg-blue-500">
+      <h1 class="text-white pt-4 pb-2 text-3xl font-bold">{{ profile.user.name }}</h1>
+      <p class="text-white mx-auto pt-2 pb-4">{{ profile.user.description }}</p>
+    </header>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card container">
+            <section id="datos-personales">
+              <h2 class="fs-3">Datos Personales</h2>
+              <ul>
+                <li>Edad: {{ profile.user.personal_data.age }} años</li>
+                <li>Ciudad de Origen:
+                  <a [href]="profile.user.personal_data.origin_city" target="_blank">
+                    {{ profile.user.personal_data.origin_city }}, {{ profile.user.personal_data.origin_country }}
+                  </a>
+                </li>
+                <li>Correo Electrónico:
+                  <a [href]="'mailto:' + profile.user.personal_data.email">
+                    {{ profile.user.personal_data.email }}
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+  
+        <div class="col-12">
+          <div class="card container">
+            <section id="intereses">
+              <h2 class="fs-3">Intereses</h2>
+              <ol>
+                <li *ngFor="let interest of profile.user.interest">{{ interest.activity }}</li>
+              </ol>
+            </section>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card container">
+            <h2 class="fs-3 pb-3">Conocimiento en herramientas tecnológicas</h2>
+            <table class="table table-sm">
+              <thead>
+                <tr class="bg-blue-500 text-white">
+                  <th></th>
+                  <th scope="col">Tecnologías</th>
+                  <th scope="col">Conocimiento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let tech of profile.user.technology">
+                  <th scope="row">{{ tech.id }}</th>
+                  <td>{{ tech.name }}</td>
+                  <td>{{ tech.knowledge }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+        <div class="col-12">
+            <div class="card container">
+              <h3 class="text-2xl">Mis Redes Sociales</h3>
+              <div class="row">
+                <div *ngFor="let network of profile.user.social_network" class="col-3">
+                  <div class="d-flex flex-column align-items-center justify-content-center">
+                    <img [src]="network.path_img" alt="{{ network.name }}" class="w-24" />
+                    <a [href]="network.page_url" target="_blank" class="text-blue-500 underline">{{ network.name }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
 <ng-container *ngIf="!profile">
     perfil no renderizado

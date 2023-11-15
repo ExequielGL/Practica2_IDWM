@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import Profile from '../../models/profile.model'
 import { ProfileService } from '../../services/profile.service';
 
@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit{
   constructor(private profileService: ProfileService) {}
 
   ngOnInit() {
-    this.profileService.getProfile(1).subscribe((data) => {
+    this.profileService.getProfile().subscribe((data) => {
       this.profile = data;
     });
   }
