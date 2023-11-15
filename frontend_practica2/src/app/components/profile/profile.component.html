@@ -1,0 +1,14 @@
+<ng-container *ngIf="profile">
+
+    <h1> {{ profile.user.name }}</h1>
+    <h2> {{ profile.user.personal_data.email }}</h2>
+    <h1> {{ profile.user.social_network[0].name }}</h1>
+    <h1> {{ profile.user.description }}</h1>
+    <h1> {{ profile.user.technology[0].name }}</h1>
+    <img [ngSrc]="profile.user.social_network[0].path_img" alt="si" width="70" height="70">
+
+</ng-container>
+
+<ng-container *ngIf="!profile">
+    perfil no renderizado
+</ng-container>
