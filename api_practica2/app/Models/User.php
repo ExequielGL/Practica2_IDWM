@@ -4,7 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Interest;
-use App\Models\Technology;
+use App\Models\Framework;
 use App\Models\PersonalData;
 use App\Models\SocialNetwork;
 use Laravel\Sanctum\HasApiTokens;
@@ -61,9 +61,9 @@ class User extends Authenticatable
         return $this->hasMany(SocialNetwork::class);
     }
     
-    public function technology()
+    public function framework()
     {
-        return $this->hasMany(Technology::class);
+        return $this->hasMany(Framework::class);
     }   
 
 }

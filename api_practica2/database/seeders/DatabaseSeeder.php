@@ -6,7 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\InterestSeeder;
-use Database\Seeders\TechnologySeeder;
+use Database\Seeders\FrameworkSeeder;
 use Database\Seeders\PersonalDataSeeder;
 use Database\Seeders\SocialNetworkSeeder;
 
@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(InterestSeeder::class);
         $this->call(SocialNetworkSeeder::class);
         $this->call(PersonalDataSeeder::class);
-        $this->call(TechnologySeeder::class);
+        $this->call(FrameworkSeeder::class);
 
     }
 }

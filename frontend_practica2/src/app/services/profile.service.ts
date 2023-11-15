@@ -9,7 +9,7 @@ import Profile from '../models/profile.model';
 export class ProfileService {
   constructor(private http: HttpClient) {}
 
-  getProfile(id: number): Observable<Profile> {
-    return this.http.get<Profile>(`http://127.0.0.1:8000/api/profile/${id}`);
+  getProfile(): Observable<Profile> {
+    return this.http.get<Profile>('http://127.0.0.1:8000/api/profile');
   }
 }

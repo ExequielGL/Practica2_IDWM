@@ -1,0 +1,9 @@
+
+<div class="flex flex-wrap">
+    <div *ngFor="let network of socialNetworks" class="w-1/4 mb-4">
+        <div class="flex flex-col items-center justify-center">
+            <img class="w-1/4" [src]="network.path_img" alt="{{ network.name }}" >
+            <a [href]="network.page_url" target="_blank" class="text-blue-500">{{ network.name }}</a>
+        </div>
+    </div>
+</div>

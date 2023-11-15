@@ -1,18 +1,17 @@
-<ng-container *ngIf="profile">
-    
-    <h1> {{ profile.user.name }}</h1>
-    <h2> {{ profile.user.personal_data.email }}</h2>
-    <h1> {{ profile.user.social_network[0].name }}</h1>
-    <h1> {{ profile.user.description }}</h1>
-    <h1> {{ profile.user.technology[0].name }}</h1>
-    <img [src]="profile.user.social_network[0].path_img" alt="si" width="70" height="70">
-
-</ng-container>
-
-<ng-container *ngIf="!profile">
-    perfil no renderizado
-</ng-container>
-
-
-
-    
+<div *ngIf="profile">
+    <app-user [user]="profile.user"></app-user>
+    <div class="bg-gray-200 flex-1 py-2 min-w-fit">
+        <app-card title="Datos personales">
+            <app-personal-data [personalData]="profile.user.personal_data"></app-personal-data>
+        </app-card>
+        <app-card title="Intereses">
+            <app-interests [interests]="profile.user.interest"></app-interests>
+        </app-card>
+        <app-card title="Conocimientos en herramientas tecnológicas">
+            <app-frameworks [frameworks]="profile.user.framework"></app-frameworks>
+        </app-card>
+        <app-card title="Redes sociales">
+            <app-social-networks [socialNetworks]="profile.user.social_network"></app-social-networks>
+        </app-card>
+    </div>
+</div>

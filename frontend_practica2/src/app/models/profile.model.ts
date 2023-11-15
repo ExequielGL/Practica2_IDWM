@@ -12,7 +12,7 @@ interface Interest {
     user_id: number;
   }
   
-  interface Technology {
+  interface Framework {
     id: number;
     name: string;
     knowledge: string;
@@ -35,7 +35,7 @@ interface Interest {
     personal_data: PersonalData;
     interest: Interest[];
     social_network: SocialNetwork[];
-    technology: Technology[];
+    framework: Framework[];
   }
   
   interface Profile {
