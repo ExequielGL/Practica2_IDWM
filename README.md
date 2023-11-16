@@ -78,8 +78,6 @@ Esto permitirá la ejecución de Scripts en Windows.
 
 4. **Iniciar el servidor:**
 
-Ejecuta el siguiente comando para iniciar el servidor de Angular de manera local:
-
 ```bash
 ng serve
 ```
@@ -91,3 +89,5 @@ npm start
 ```
 
 Cualquiera de estos comandos iniciarán el servidor de Angular.
+
+**Una vez realizados todos los pasos, se deberá ingresar a la URL del servidor local proporcionada por Angular.**
