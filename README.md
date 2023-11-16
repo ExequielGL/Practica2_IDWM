@@ -60,7 +60,7 @@ npm install -g @angular/cli
 2. **Instalar dependencias de Tailwind CSS :**
 
 ```bash
-npm install -D tailwindcss
+npm install -D tailwindcss postcss autoprefixer
 ```
 
 Este comando instalará las dependencias de Tailwind CSS necesarias para el proyecto.
