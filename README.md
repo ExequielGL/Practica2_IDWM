@@ -42,21 +42,14 @@ Este comando iniciará el servidor de Laravel de manera local.
 
 Para configurar angular, se debe abrir una terminal con la ruta dentro de la carpeta 'frontend_practica2', luego sigue estos pasos:
 
-1. **Instalar Angular CLI:**
-
-Para instalar Angular CLI, ejecute el siguiente comando:
-
-Solo para el proyecto:
+1. **Instalar dependencias de node.js:**
 
 ```bash
-npm install @angular/cli
+npm install
 ```
 
-o de manera global:
+Se instalaran las dependencias necesarias de node.js para ejecutar el proyecto.
 
-```bash
-npm install -g @angular/cli
-```
 2. **Instalar dependencias de Tailwind CSS :**
 
 ```bash
