@@ -22,7 +22,15 @@ copy .env.example .env
 
 Este comando copiará el archivo .env.example a .env. Aquí debes configurar la base de datos.
 
-3. **Poblar la base de datos:**
+3. **Generar APP_KEY:**
+
+```bash
+php artisan key:generate
+```
+
+Este comando creará una llave para ejecutar el servidor de laravel.
+
+4. **Poblar la base de datos:**
 
 ```bash
 php artisan migrate --seed
@@ -30,7 +38,7 @@ php artisan migrate --seed
 
 Este comando creará y poblará las tablas en la base de datos. Asegúrate de que la base de datos exista y coincida con la configuración en el archivo .env.
 
-4. **Iniciar el servidor:**
+5. **Iniciar el servidor:**
 
 ```bash
 php artisan serve
@@ -50,16 +58,7 @@ npm install
 
 Se instalaran las dependencias necesarias de node.js para ejecutar el proyecto.
 
-2. **Instalar dependencias de Tailwind CSS :**
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-Este comando instalará las dependencias de Tailwind CSS necesarias para el proyecto.
-
-
-3. **Si se utiliza la consola de Windows (Opcional):**
+2. **Si se utiliza la consola de Windows (Opcional):**
 
 Abra una terminal de PowerShell con privilegios de administrador en su computadora y ejecute el siguiente comando:
 
@@ -69,7 +68,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 Esto permitirá la ejecución de Scripts en Windows.
 
-4. **Iniciar el servidor:**
+3. **Iniciar el servidor:**
 
 ```bash
 ng serve
